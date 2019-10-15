@@ -24,8 +24,6 @@ def origin_login(email):
     driver.switch_to.window(driver.window_handles[0])
     wait.until(EC.invisibility_of_element_located((By.XPATH, '//div[text()="Sign In"]')))
     driver.find_element_by_xpath('//input[@ng-model="searchString"]').send_keys(email)
-    # error = driver.find_element_by_xpath('//div[@class="origin-search-results
-    # l-origin-section"]/div/origin-search-no-results/section/h1/span') print(error.text)
     wait = WebDriverWait(driver, 15)
     try:
         wait.until(EC.visibility_of_element_located((By.XPATH, '//a[@class="otka otkc origin-friendtile-originId"]')))
