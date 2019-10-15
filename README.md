@@ -10,7 +10,7 @@
 
 1. Установить из Git
 
- ```https://github.com/NikolayVatan/origin.git```
+ ```https://github.com/NikolayVatan/originacc.git```
 
 Настройка Docker.
 Перейдите в командную строку и введите следующие команду:
