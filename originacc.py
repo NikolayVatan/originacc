@@ -12,8 +12,11 @@ def origin_login(email):
     driver.set_window_size(1280, 768)
     wait = WebDriverWait(driver, 15)
     driver.get('https://www.origin.com')
-    wait.until(EC.visibility_of_element_located((By.XPATH, '//div[text()="Войти"]')))
-    driver.find_element_by_xpath('//div[text()="Войти"]').click()
+    wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="shell"]/section/div/nav/div/div[5]/ul/li[1]/'
+                                                           'origin-cta-login/origin-cta-primary')))
+    driver.find_element_by_xpath('//*[@id="shell"]/section/div/nav/div/div[5]/ul/li[1]/origin-cta-login/'
+                                 'origin-cta-primary').click()
+    login_window = driver.window_handles[1]
     login_window = driver.window_handles[1]
     driver.switch_to.window(login_window)
     wait.until(EC.visibility_of_element_located((By.XPATH, '//input[@id="email"]')))
