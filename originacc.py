@@ -45,7 +45,6 @@ def origin_login(email):
         except:
             return 'Account not found'
     finally:
-        driver.save_screenshot('screen_shot.png')
         driver.quit()
 
 
