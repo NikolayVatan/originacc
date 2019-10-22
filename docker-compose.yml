@@ -6,3 +6,18 @@ services:
     ports:
       - 4314:5000
     restart: always
+  selenium:
+    container_name: originacc-selenium
+    image: selenium/standalone-chrome:3.141.59-vanadium
+    restart: always
+    volumes:
+      - '/dev/shm:/dev/shm'
+    ports:
+      - 4444:4444
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.6.1.0/24
